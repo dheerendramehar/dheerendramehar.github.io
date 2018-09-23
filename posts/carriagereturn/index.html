@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://dheerendramehar.github.io/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Carrige return(\r) addition to a file in Windows"/>
+  <meta name="twitter:description" content="1. Problem While writing a bash script in Unix, i found that if i create a file in Windows and use it it in a bash script, script fails. When digging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).
+2. Basics In old days when people had to use Typewriters, they had to do two things frequently"/>
+  
+    <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Dheerendra Mehar"/>
+  
+
+
+
+		
+		<meta name="author" content="Dheerendra Mehar">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.46" />
+		<title>Carrige return(\r) addition to a file in Windows &middot; Dheerendra Mehar</title>
+		<link rel="shortcut icon" href="https://dheerendramehar.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/style.css">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://dheerendramehar.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Dheerendra Mehar" />
+		
+
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://dheerendramehar.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://dheerendramehar.github.io/posts'>Archive</a>
+	<a href='https://dheerendramehar.github.io/tags'>Tags</a>
+	<a href='https://dheerendramehar.github.io/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://dheerendramehar.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Carrige return(\r) addition to a file in Windows
+                    </h1>
+                    <h2 class="headline">
+                    Sep 23, 2018 10:26
+                    · 572 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://dheerendramehar.github.io/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-problem">1. Problem</a></li>
+<li><a href="#2-basics">2. Basics</a></li>
+<li><a href="#3-solution">3. Solution</a></li>
+<li><a href="#4-example">4. Example</a></li>
+<li><a href="#5-more-info">5. More info</a></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    
+
+<h2 id="1-problem">1. Problem</h2>
+
+<p>While writing a bash script in Unix, i found that if i create a file in Windows and use it it in a bash script, script fails. When digging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).</p>
+
+<h2 id="2-basics">2. Basics</h2>
+
+<p>In old days when people had to use Typewriters, they had to do two things frequently</p>
+
+<blockquote>
+<p>a. Move carriage to the beginning of the line to
+restart typing (\r)</p>
+
+<p>b. Turn wheel to move the paper to change the line (\n)</p>
+</blockquote>
+
+<p>A carriage return(\r) means moving the cursor to the beginning of the line.</p>
+
+<p>A line feed(\n) means moving one line forward. Windows often still uses Typewriter&rsquo;s scheme i.e. combination of both as \r\n in text files.</p>
+
+<p>Unix mostly uses only the \n.</p>
+
+<h2 id="3-solution">3. Solution</h2>
+
+<p>First check whether file contains a “\r” at the end (0d in Hex) or not using the following command.</p>
+
+<pre><code class="language-bash">$ while read -r line; do printf  %s &quot;$line&quot; | xxd; done &lt; file.txt
+</code></pre>
+
+<blockquote>
+<p>xxd: creates a hex dump of a given file or standard input</p>
+</blockquote>
+
+<p>If the $line contains a \r (CR) at the end (0d). Remove it with ${line%$&rsquo;\r&rsquo;}. You can use either of the following commands</p>
+
+<pre><code class="language-bash">$ while read -r line; do echo ${line%$'\r'} &gt;&gt; tmp.txt ; done &lt; file.txt
+</code></pre>
+
+<p>or</p>
+
+<pre><code class="language-bash">$ tr -d '\r' &lt; file.txt &gt; tmp.txt
+$ while read -r line; do printf  %s &quot;$line&quot; | xxd; done &lt; tmp.txt
+</code></pre>
+
+<p>If you run the above commands then your file(tmp.txt) will be carriage return(\r) free and you can use it in Unix/Linux Systems without any issues.</p>
+
+<h2 id="4-example">4. Example</h2>
+
+<p>a. Create a file in Unix and check it&rsquo;s Hex Dump</p>
+
+<pre><code class="language-bash">[admin@localhost ~]$ vi file.txt
+[admin@localhost ~]$ cat file.txt
+love
+hate
+[admin@localhost ~]$ while read -r line; do printf  %s &quot;$line&quot; | xxd; done &lt; file.txt
+0000000: 6c6f 7665                                love
+0000000: 6861 7465                                hate
+</code></pre>
+
+<p>b. Now create another file named &lsquo;file2.txt&rsquo;  with same content in windows and import it into Unix.</p>
+
+<pre><code class="language-bash">[admin@localhost ~]$ while read -r line; do printf  %s &quot;$line&quot; | xxd; done &lt; file2.txt
+0000000: 6c6f 7665 0d                             love.
+0000000: 6861 7465 0d                             hate.
+[admin@localhost ~]$ cat file2.txt
+love
+hate
+</code></pre>
+
+<p>c. Can you see the extra addition of &ldquo;0d&rdquo; in Hex Value or &lsquo;.&rsquo; in word name? while cat shows the same output in both operating systems. That extra &lsquo;0d&rsquo; is due to addition of carriage return(\r) at the end of every line in windows.</p>
+
+<p>So let&rsquo;s remove this;</p>
+
+<pre><code class="language-bash">[admin@localhost ~]$ tr -d '\r' &lt; file2.txt &gt; tmp.txt
+</code></pre>
+
+<p>or</p>
+
+<pre><code class="language-bash">[admin@localhost ~]$ while read -r line; do echo ${line%$'\r'} &gt;&gt; tmp.txt ; done &lt; file.txt
+[admin@localhost ~]$ while read -r line; do printf  %s &quot;$line&quot; | xxd; done &lt; tmp.txt
+0000000: 6c6f 7665                                love
+0000000: 6861 7465                                hate
+[admin@localhost ~]$ cat tmp.txt
+love
+hate
+</code></pre>
+
+<p>So we have removed that extra &ldquo;0d&rdquo; and now we are good to use this file in Unix/Linux. Note that &ldquo;cat&rdquo; still shows the same output because it does not print escape characters.</p>
+
+<h2 id="5-more-info">5. More info</h2>
+
+<blockquote>
+<p>Parameter expansion : ${var%Pattern} removes from $var the shortest part of $Pattern that matches the back end of $var.</p>
+
+<p>Why is the $ needed before the &lsquo;\r&rsquo;?
+Ans: There are two characters in &lsquo;\r&rsquo;, backslash and r; while $&rsquo;\r&rsquo; is one character, the carriage return. We use $&lsquo;&hellip;&rsquo; when we want to escape sequences to be interpreted by the shell. To know more read ‘Ansi-C Quoting’.</p>
+</blockquote>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fcarriagereturn%2f - Carrige%20return%28%5cr%29%20addition%20to%20a%20file%20in%20Windows by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'your_disqus_short_name'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/dheerem">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/dheerendramehar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.instagram.com/dheerendramehar">
+        <i class="fa fa-instagram"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2018 <i class="fa fa-heart" aria-hidden="true"></i> Dheerendra Mehar
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://dheerendramehar.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://dheerendramehar.github.io/js/main.js"></script>
+<script src="https://dheerendramehar.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'your_google_analytics_id', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>

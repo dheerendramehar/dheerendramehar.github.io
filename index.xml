@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dheerendra Mehar</title>
+    <link>https://dheerendramehar.github.io/</link>
+    <description>Recent content on Dheerendra Mehar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dheerendramehar.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>https://dheerendramehar.github.io/posts/creating-a-new-theme/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/creating-a-new-theme/</guid>
+      <description>&lt;h3 id=&#34;introduction&#34;&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;This tutorial will show you how to create a simple theme in Hugo.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Migrate to Hugo from Jekyll</title>
+      <link>https://dheerendramehar.github.io/posts/migrate-from-jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/migrate-from-jekyll/</guid>
+      <description>&lt;h2 id=&#34;move-static-content-to-static&#34;&gt;Move static content to &lt;code&gt;static&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;Jekyll has a rule that any directory not starting with &lt;code&gt;_&lt;/code&gt; will be copied as-is to the &lt;code&gt;_site&lt;/code&gt; output.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Carrige return(\r) addition to a file in Windows</title>
+      <link>https://dheerendramehar.github.io/posts/carriagereturn/</link>
+      <pubDate>Sun, 23 Sep 2018 10:26:48 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/carriagereturn/</guid>
+      <description>1. Problem While writing a bash script in Unix, i found that if i create a file in Windows and use it it in a bash script, script fails. When digging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).
+2. Basics In old days when people had to use Typewriters, they had to do two things frequently</description>
+    </item>
+    
+    <item>
+      <title>Dheerendra Mehar</title>
+      <link>https://dheerendramehar.github.io/posts/one_page_resume/</link>
+      <pubDate>Sat, 22 Sep 2018 21:08:16 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/one_page_resume/</guid>
+      <description>CONTACT ME    Email dheerenm95@gmail.com     Mobile +91- 8948317115    EDUCATION    Year Degree Institution CGPA/%     2012-16 B.Tech(EE) Indian Institute of Technology Kanpur 6.7&amp;frasl;10   2011 XII (RBSE) Gyandeep Sr. Sec. School Gangapurcity 89.85%   2009 X (RBSE) Govt. Sec. School Shekhpura 90.17%    ACHIEVEMENTS  Secured Second Position among 60 teams in Sky sparks-Techkriti’15, IIT Kanpur (Mar’15)  Qualified for National Finals held at IIT Delhi sponsored by Boeing Designed, built and flied an aircraft which can do simple maneuvers and gliding Experimented and checked performance by making four prototypes having different airfoils and simulating in XFLR Software  Secured First Position in Cruise Control-Techkriti’15, IIT Kanpur (Mar’15)  Performed all the listed maneuvers on Remote Controlled(RC) IC-Engine low winger aircraft Obtained maximum glide time and did spot landing Secured First Position among 95 teams in Aviator Design Challenge-Techfest’14, IIT Bombay (Jan’14) Designed, built and maneuvered an RC aircraft and achieved a payload fraction of 0.</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>https://dheerendramehar.github.io/posts/goisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/goisforlovers/</guid>
+      <description>&lt;p&gt;Hugo uses the excellent &lt;a href=&#34;http://golang.org/&amp;gt;&#34;&gt;go&lt;/a&gt; &lt;a href=&#34;http://golang.org/pkg/html/template/&amp;gt;&#34;&gt;html/template&lt;/a&gt; library for
+its template engine. It is an extremely lightweight engine that provides a very
+small amount of logic.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Getting Started with Hugo</title>
+      <link>https://dheerendramehar.github.io/posts/hugoisforlovers/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/hugoisforlovers/</guid>
+      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
+
+&lt;p&gt;Goto &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo releases&lt;/a&gt; and download the
+appropriate version for your os and architecture.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
