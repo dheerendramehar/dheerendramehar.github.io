@@ -16,7 +16,7 @@
   <meta name="twitter:title" content="Resolving SSH Authentication issues"/>
   <meta name="twitter:description" content="How to resolve SSH Authentication issues 1. Problem: I wanted to access an Ubuntu node from a CentOS node without any password. To accomplish this, i needed to setup SSH keys. So I followed the following steps:
 a. Generated SSH keys using ssh-keyzen
-ssh-keygen  here two keys are generated /your_home/.ssh/id_rsa and /your_home/.ssh/id_rsa.pub . First one is private key and second is public key.
+ubuntu@ubuntu_node:~$ ssh-keygen  here two keys are generated /your_home/.ssh/id_rsa and /your_home/.ssh/id_rsa.pub . First one is private key and second is public key.
 b. Copy the public key to authorized_keys on remote node(in my case a CentOS node) using ssh-copy-id"/>
   
     <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
@@ -75,7 +75,7 @@ b. Copy the public key to authorized_keys on remote node(in my case a CentOS nod
                     </h1>
                     <h2 class="headline">
                     Sep 28, 2018 22:14
-                    · 471 words
+                    · 477 words
                     · 3 minute read
                       <span class="tags">
                       
@@ -125,19 +125,19 @@ b. Copy the public key to authorized_keys on remote node(in my case a CentOS nod
 
 <p>a. Generated SSH keys using ssh-keyzen</p>
 
-<pre><code class="language-bash">ssh-keygen
+<pre><code class="language-bash">ubuntu@ubuntu_node:~$ ssh-keygen
 </code></pre>
 
 <p>here two keys are generated <em>/your_home/.ssh/id_rsa</em> and <em>/your_home/.ssh/id_rsa.pub</em> . First one is private key and second is public key.</p>
 
 <p>b. Copy the public key to authorized_keys on remote node(in my case a CentOS node) using ssh-copy-id</p>
 
-<pre><code class="language-bash">ssh-copy-id centos@ubuntu_node_IP
+<pre><code class="language-bash">ubuntu@ubuntu_node:~$ ssh-copy-id centos@ubuntu_node_IP
 </code></pre>
 
 <p>c. Check on remote node whether the Public key is added in authorized_keys.</p>
 
-<pre><code class="language-bash">less ~/.ssh/authorized_keys
+<pre><code class="language-bash">ubuntu@ubuntu_node:~$ less ~/.ssh/authorized_keys
 </code></pre>
 
 <p>Above three steps worked without any error but still i wasn&rsquo;t able to do SSH to my CentOS node. So after playing with the system and doing some research on internet, i have made my <strong>Golden Procedure</strong> to debug such issuee without wasting time.</p>
@@ -146,11 +146,11 @@ b. Copy the public key to authorized_keys on remote node(in my case a CentOS nod
 
 <h3 id="1-to-be-able-to-do-ssh-from-one-node-to-another-ensure-that-sshd-dameon-is-running-on-both-nodes">1. To be able to do SSH from one node to another, ensure that SSHD dameon is running on both nodes.</h3>
 
-<pre><code class="language-bash">ubuntu@ubuntu_node:~# ps aux | grep [s]shd
+<pre><code class="language-bash">ubuntu@ubuntu_node:~$ ps aux | grep [s]shd
 root       298  0.0  2.1  65308  5124 ?        Ss   15:54   0:00 /usr/sbin/sshd -D 
 </code></pre>
 
-<pre><code>centos@centos_node:~# ps aux | grep [s]shd
+<pre><code>centos@centos_node:~$ ps aux | grep [s]shd
 root       298  0.0  2.1  65508  5424 ?        Ss   15:55   0:00 /usr/sbin/sshd -D    
 </code></pre>
 
@@ -185,7 +185,7 @@ For Ubuntu: Check logs in /var/log/auth.log</p>
 
 <p>My remote node is CentOS. Logs in <em>secure</em> file are:</p>
 
-<pre><code class="language-bash">tail -f /var/log/secure
+<pre><code class="language-bash">centos@centos_node:~$ tail -f /var/log/secure
 Sep 28 15:41:40 nvmbd2akl150d00 sshd[15433]: Authentication refused: bad ownership or modes for directory /home/centos
 </code></pre>
 
@@ -195,12 +195,12 @@ Generally, you will be able to find any issues in these logs.
 
 <p>In my case centos node was not having correct home directory permissions. After correcting the permissions to 700, authetication issue was resolved.</p>
 
-<pre><code class="language-bash"> chmod 700 /home/centos
+<pre><code class="language-bash">centos@centos_node:~$ chmod 700 /home/centos
 </code></pre>
 
 <p>After corecting the permissions, /var/log/secure output is as follows:</p>
 
-<pre><code class="language-bash">tail -f /var/log/secure
+<pre><code class="language-bash">centos@centos_node:~$ tail -f /var/log/secure
 Sep 28 15:54:07 nvmbd2akl150d00 sshd[44948]: Accepted publickey for userapp from 10.147.106.37 port 40836 ssh2
 </code></pre>
 
