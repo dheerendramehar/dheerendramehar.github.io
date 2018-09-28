@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>https://dheerendramehar.github.io/posts/sshauthentication/</loc>
+    <lastmod>2018-09-28T22:14:40+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://dheerendramehar.github.io/posts/carriagereturn/</loc>
     <lastmod>2018-09-23T10:26:48+05:30</lastmod>
   </url>
@@ -38,12 +43,6 @@
   </url>
   
   <url>
-    <loc>https://dheerendramehar.github.io/categories/</loc>
-    <lastmod>2018-09-23T10:26:48+05:30</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://dheerendramehar.github.io/tags/</loc>
     <lastmod>2018-09-23T10:26:48+05:30</lastmod>
     <priority>0</priority>
@@ -56,13 +55,19 @@
   </url>
   
   <url>
-    <loc>https://dheerendramehar.github.io/categories/development/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <loc>https://dheerendramehar.github.io/categories/</loc>
+    <lastmod>2018-09-23T10:26:48+05:30</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://dheerendramehar.github.io/tags/development/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dheerendramehar.github.io/categories/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -80,13 +85,13 @@
   </url>
   
   <url>
-    <loc>https://dheerendramehar.github.io/categories/golang/</loc>
+    <loc>https://dheerendramehar.github.io/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dheerendramehar.github.io/tags/golang/</loc>
+    <loc>https://dheerendramehar.github.io/categories/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -98,8 +103,38 @@
   </url>
   
   <url>
+    <loc>https://dheerendramehar.github.io/tags/linux/</loc>
+    <lastmod>2018-09-28T22:14:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dheerendramehar.github.io/categories/linuxtips/</loc>
+    <lastmod>2018-09-28T22:14:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://dheerendramehar.github.io/posts/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dheerendramehar.github.io/tags/ssh/</loc>
+    <lastmod>2018-09-28T22:14:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dheerendramehar.github.io/tags/ssh-authentication/</loc>
+    <lastmod>2018-09-28T22:14:40+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dheerendramehar.github.io/tags/ssh-keys/</loc>
+    <lastmod>2018-09-28T22:14:40+05:30</lastmod>
     <priority>0</priority>
   </url>
   
