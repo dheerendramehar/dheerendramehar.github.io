@@ -38,6 +38,18 @@
     </item>
     
     <item>
+      <title>Everyday Linux hacks and tips</title>
+      <link>https://dheerendramehar.github.io/posts/everydaylinuxhacksandtips/</link>
+      <pubDate>Sun, 07 Oct 2018 11:08:35 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/everydaylinuxhacksandtips/</guid>
+      <description>Here are some useful linux commands, i frequently use
+1. Removing grep result from ps output  ps aux | grep [d]hcp  By putting brackets, we are searching for a regex and preventing grep from matching itself. Since [d]hcp doesn&amp;rsquo;t match the [d]hcp regular expression, so grep won&amp;rsquo;t show up in the results.
+To understand more, play with ps, grep and regex.
+Below is the ouput of above command with and without brackets.</description>
+    </item>
+    
+    <item>
       <title>Resolving SSH Authentication issues</title>
       <link>https://dheerendramehar.github.io/posts/sshauthentication/</link>
       <pubDate>Fri, 28 Sep 2018 22:14:40 +0530</pubDate>
