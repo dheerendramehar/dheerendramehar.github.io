@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Dheerendra Mehar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 07 Oct 2018 11:08:35 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 23 Oct 2018 00:01:34 +0530</lastBuildDate>
     
 	<atom:link href="https://dheerendramehar.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://dheerendramehar.github.io/categories/</link>
-      <pubDate>Sun, 07 Oct 2018 11:08:35 +0530</pubDate>
+      <pubDate>Tue, 23 Oct 2018 00:01:34 +0530</pubDate>
       
       <guid>https://dheerendramehar.github.io/categories/</guid>
       <description></description>
@@ -48,7 +48,18 @@
     </item>
     
   </channel>
-</rss>gging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).
+</rss>p doesn&amp;rsquo;t match the [d]hcp regular expression, so grep won&amp;rsquo;t show up in the results.
+To understand more, play with ps, grep and regex.
+Below is the ouput of above command with and without brackets.</description>
+    </item>
+    
+    <item>
+      <title>Carrige return(\r) addition to a file in Windows</title>
+      <link>https://dheerendramehar.github.io/posts/carriagereturn/</link>
+      <pubDate>Sun, 23 Sep 2018 10:26:48 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/carriagereturn/</guid>
+      <description>1. Problem While writing a bash script in Unix, i found that if i create a file in Windows and use it it in a bash script, script fails. When digging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).
 2. Basics In old days when people had to use Typewriters, they had to do two things frequently</description>
     </item>
     

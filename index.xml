@@ -38,6 +38,15 @@
     </item>
     
     <item>
+      <title>vi editor useful commands</title>
+      <link>https://dheerendramehar.github.io/posts/vieditorcommands/</link>
+      <pubDate>Tue, 23 Oct 2018 00:01:34 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/vieditorcommands/</guid>
+      <description>Description Command     comment all the lines :%s/^/#    uncommnet all the lines :%s/^#/    comment line no. m to n :m,ns/^/#    uncomment line no. m to n :m,ns/^#/    add comma after all the lines :%s/$/,    remove comma after all the lines :%s/,$/    remove comma after line no. m to n :m,ns/,$/    search for a string from forward /string    search for a string from backward ?</description>
+    </item>
+    
+    <item>
       <title>Everyday Linux hacks and tips</title>
       <link>https://dheerendramehar.github.io/posts/everydaylinuxhacksandtips/</link>
       <pubDate>Sun, 07 Oct 2018 11:08:35 +0530</pubDate>
