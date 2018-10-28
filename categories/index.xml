@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Dheerendra Mehar</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Oct 2018 00:01:34 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 28 Oct 2018 10:24:50 +0530</lastBuildDate>
     
 	<atom:link href="https://dheerendramehar.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title></title>
       <link>https://dheerendramehar.github.io/categories/</link>
-      <pubDate>Tue, 23 Oct 2018 00:01:34 +0530</pubDate>
+      <pubDate>Sun, 28 Oct 2018 10:24:50 +0530</pubDate>
       
       <guid>https://dheerendramehar.github.io/categories/</guid>
       <description></description>
@@ -45,31 +45,6 @@
       
       <guid>https://dheerendramehar.github.io/categories/linuxtips/</guid>
       <description></description>
-    </item>
-    
-  </channel>
-</rss>p doesn&amp;rsquo;t match the [d]hcp regular expression, so grep won&amp;rsquo;t show up in the results.
-To understand more, play with ps, grep and regex.
-Below is the ouput of above command with and without brackets.</description>
-    </item>
-    
-    <item>
-      <title>Carrige return(\r) addition to a file in Windows</title>
-      <link>https://dheerendramehar.github.io/posts/carriagereturn/</link>
-      <pubDate>Sun, 23 Sep 2018 10:26:48 +0530</pubDate>
-      
-      <guid>https://dheerendramehar.github.io/posts/carriagereturn/</guid>
-      <description>1. Problem While writing a bash script in Unix, i found that if i create a file in Windows and use it it in a bash script, script fails. When digging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).
-2. Basics In old days when people had to use Typewriters, they had to do two things frequently</description>
-    </item>
-    
-    <item>
-      <title>Dheerendra Mehar</title>
-      <link>https://dheerendramehar.github.io/posts/one_page_resume/</link>
-      <pubDate>Sat, 22 Sep 2018 21:08:16 +0530</pubDate>
-      
-      <guid>https://dheerendramehar.github.io/posts/one_page_resume/</guid>
-      <description>CONTACT ME    Email dheerenm95@gmail.com     Mobile +91- 8948317115    EDUCATION    Year Degree Institution CGPA/%     2012-16 B.Tech(EE) Indian Institute of Technology Kanpur 6.7&amp;frasl;10   2011 XII (RBSE) Gyandeep Sr. Sec. School Gangapurcity 89.85%   2009 X (RBSE) Govt. Sec. School Shekhpura 90.17%    ACHIEVEMENTS  Secured Second Position among 60 teams in Sky sparks-Techkriti’15, IIT Kanpur (Mar’15)  Qualified for National Finals held at IIT Delhi sponsored by Boeing Designed, built and flied an aircraft which can do simple maneuvers and gliding Experimented and checked performance by making four prototypes having different airfoils and simulating in XFLR Software  Secured First Position in Cruise Control-Techkriti’15, IIT Kanpur (Mar’15)  Performed all the listed maneuvers on Remote Controlled(RC) IC-Engine low winger aircraft Obtained maximum glide time and did spot landing Secured First Position among 95 teams in Aviator Design Challenge-Techfest’14, IIT Bombay (Jan’14) Designed, built and maneuvered an RC aircraft and achieved a payload fraction of 0.</description>
     </item>
     
   </channel>

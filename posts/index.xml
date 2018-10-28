@@ -38,6 +38,17 @@
     </item>
     
     <item>
+      <title>Disabling VLC volume increase</title>
+      <link>https://dheerendramehar.github.io/posts/disablevlcvolumeincrease/</link>
+      <pubDate>Sun, 28 Oct 2018 10:24:50 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/disablevlcvolumeincrease/</guid>
+      <description>If you use the VLC player, it is suggested that you do not increase the volume higher than 100% in order to avoid potential damage to speakers.
+Why is it needed? Increasing volume above 100% in VLC can damage your speakers. Dell and HP do not cover this damage under warranty.
+Why does it happen? The VLC player can allow large power output through speaker than the original sound output.</description>
+    </item>
+    
+    <item>
       <title>vi editor useful commands</title>
       <link>https://dheerendramehar.github.io/posts/vieditorcommands/</link>
       <pubDate>Tue, 23 Oct 2018 00:01:34 +0530</pubDate>

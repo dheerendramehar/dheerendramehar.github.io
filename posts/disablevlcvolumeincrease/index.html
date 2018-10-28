@@ -13,8 +13,10 @@
     
   
   
-  <meta name="twitter:title" content="vi editor useful commands"/>
-  <meta name="twitter:description" content="Description Command     comment all the lines :%s/^/#    uncommnet all the lines :%s/^#/    comment line no. m to n :m,ns/^/#    uncomment line no. m to n :m,ns/^#/    add comma after all the lines :%s/$/,    remove comma after all the lines :%s/,$/    remove comma after line no. m to n :m,ns/,$/    search for a string from forward /string    search for a string from backward ?"/>
+  <meta name="twitter:title" content="Disabling VLC volume increase"/>
+  <meta name="twitter:description" content="If you use the VLC player, it is suggested that you do not increase the volume higher than 100% in order to avoid potential damage to speakers.
+Why is it needed? Increasing volume above 100% in VLC can damage your speakers. Dell and HP do not cover this damage under warranty.
+Why does it happen? The VLC player can allow large power output through speaker than the original sound output."/>
   
     <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
   
@@ -30,7 +32,7 @@
 		<meta name="author" content="Dheerendra Mehar">
 		<meta name="description" content="Site Description">
 		<meta name="generator" content="Hugo 0.46" />
-		<title>vi editor useful commands &middot; Dheerendra Mehar</title>
+		<title>Disabling VLC volume increase &middot; Dheerendra Mehar</title>
 		<link rel="shortcut icon" href="https://dheerendramehar.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/style.css">
 		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/highlight.css">
@@ -70,12 +72,12 @@
             <article>
                 <header>
                     <h1>
-                        vi editor useful commands
+                        Disabling VLC volume increase
                     </h1>
                     <h2 class="headline">
-                    Oct 23, 2018 00:01
-                    · 213 words
-                    · 1 minute read
+                    Oct 28, 2018 10:24
+                    · 265 words
+                    · 2 minute read
                       <span class="tags">
                       
                       
@@ -89,186 +91,80 @@
                 </header>
                 
                   
+                    <div id="toc">
+                      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#why-is-it-needed">Why is it needed?</a></li>
+<li><a href="#why-does-it-happen">Why does it happen?</a></li>
+<li><a href="#what-is-the-solution">What is the Solution?</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                  
                 
                 <section id="post-body">
-                    <table>
-<thead>
-<tr>
-<th>Description</th>
-<th>Command</th>
-</tr>
-</thead>
+                    
 
-<tbody>
-<tr>
-<td>comment all the lines</td>
-<td><font face="Consolas" size="4"> :%s/^/# </font></td>
-</tr>
+<p>If you use the VLC player, it is suggested that you do not increase the volume higher than 100% in order to avoid potential damage to speakers.</p>
 
-<tr>
-<td>uncommnet all the lines</td>
-<td><font face="Consolas" size="4"> :%s/^#/ </font></td>
-</tr>
+<h3 id="why-is-it-needed">Why is it needed?</h3>
 
-<tr>
-<td>comment line no. m to n</td>
-<td><font face="Consolas" size="4"> :m,ns/^/# </font></td>
-</tr>
+<p>Increasing volume above 100% in VLC can damage your speakers. <a href="https://www.dell.com/community/Laptops-General-Read-Only/VLC-Media-Player-WARNING/td-p/4082242">Dell</a> and HP do not cover this damage under warranty.</p>
 
-<tr>
-<td>uncomment line no. m to n</td>
-<td><font face="Consolas" size="4"> :m,ns/^#/ </font></td>
-</tr>
+<h3 id="why-does-it-happen">Why does it happen?</h3>
 
-<tr>
-<td>add comma after all the lines</td>
-<td><font face="Consolas" size="4"> :%s/$/, </font></td>
-</tr>
+<p>The VLC player can allow large power output through speaker than the original sound output. So the speaker might not be able to handle this output power. (In recent BIOSes and Drivers, Dell has limited the speaker power output)</p>
 
-<tr>
-<td>remove comma after all the lines</td>
-<td><font face="Consolas" size="4"> :%s/,$/ </font></td>
-</tr>
+<h3 id="what-is-the-solution">What is the Solution?</h3>
 
-<tr>
-<td>remove comma after line no. m to n</td>
-<td><font face="Consolas" size="4"> :m,ns/,$/ </font></td>
-</tr>
+<p>Disable all the possible options which can lead to an accidental increase in sound.</p>
 
-<tr>
-<td>search for a string from forward</td>
-<td><font face="Consolas" size="4"> /string </font></td>
-</tr>
+<ol>
+<li>Disable mouse wheel control
 
-<tr>
-<td>search for a string from backward</td>
-<td><font face="Consolas" size="4"> ?string </font></td>
-</tr>
+<ul>
+<li>Go to  Tools -&gt; Preferences</li>
+<li>Select &ldquo;Hotkeys&rdquo; Tab</li>
+<li>Now at the bottom of the screen you will see &ldquo;Mouse wheel vertical axis control&rdquo;</li>
+<li>select &ldquo;Ignore option&rdquo;</li>
+<li>Save the settings and restart the VLC.</li>
+</ul></li>
+<li>Remove CTRL+ UP and CTRL + Down hotkeys
 
-<tr>
-<td>repeat the search in same direction</td>
-<td><font face="Consolas" size="4"> n </font></td>
-</tr>
+<ul>
+<li>Go to  Tools -&gt; Preferences</li>
+<li>Select &ldquo;Hotkeys&rdquo; Tab</li>
+<li>In the search bar search &ldquo;volume&rdquo;</li>
+<li>There you will see two results &ldquo;Volume up&rdquo; and &ldquo;Volume down&rdquo;</li>
+<li>Double-click on each of them and click Unset</li>
+<li>Save the settings and restart the VLC.</li>
+</ul></li>
+<li>Limit the volume display to 100%
 
-<tr>
-<td>repeat the search in reverse direction</td>
-<td><font face="Consolas" size="4"> N </font></td>
-</tr>
+<ul>
+<li>Go to  Tools -&gt; Preferences</li>
+<li>Now at the bottom of the screen you will see &ldquo;Show settings&rdquo;</li>
+<li>select &ldquo;All&rdquo;</li>
+<li>Now go to Interface -&gt; Main interfaces -&gt; Qt</li>
+<li>Scroll down to the very bottom, you will see &ldquo;Maximum Volume Displayed&rdquo;</li>
+<li>Limit it &ldquo;100&rdquo;</li>
+<li>Save the settings and restart the VLC.</li>
+</ul></li>
+</ol>
 
-<tr>
-<td>delete a line</td>
-<td><font face="Consolas" size="4"> dd </font></td>
-</tr>
-
-<tr>
-<td>delete n lines</td>
-<td><font face="Consolas" size="4"> ndd </font></td>
-</tr>
-
-<tr>
-<td>delete nth line</td>
-<td><font face="Consolas" size="4"> :nd </font></td>
-</tr>
-
-<tr>
-<td>delete line no. m to n</td>
-<td><font face="Consolas" size="4"> :m,nd </font></td>
-</tr>
-
-<tr>
-<td>copy a line</td>
-<td><font face="Consolas" size="4">  yy </font></td>
-</tr>
-
-<tr>
-<td>copy n lines</td>
-<td><font face="Consolas" size="4"> nyy </font></td>
-</tr>
-
-<tr>
-<td>copy nth line</td>
-<td><font face="Consolas" size="4"> :ny </font></td>
-</tr>
-
-<tr>
-<td>copy line no. m to n</td>
-<td><font face="Consolas" size="4"> :m,ny </font></td>
-</tr>
-
-<tr>
-<td>put or paste a line</td>
-<td><font face="Consolas" size="4"> p </font></td>
-</tr>
-
-<tr>
-<td>running a command without exiting vi</td>
-<td><font face="Consolas" size="4"> :!<command> </font></td>
-</tr>
-
-<tr>
-<td>undo last change</td>
-<td><font face=" Consolas"> u </font></td>
-</tr>
-
-<tr>
-<td>redo last change</td>
-<td><font face="Consolas" size="4"> Ctrl + r </font></td>
-</tr>
-
-<tr>
-<td>write to a file</td>
-<td><font face="Consolas" size="4">  :w <file_name> </font></td>
-</tr>
-
-<tr>
-<td>write and quit</td>
-<td><font face="Consolas" size="4"> :wq </font></td>
-</tr>
-
-<tr>
-<td>quit forcefully without saving changes</td>
-<td><font face="Consolas" size="4"> q! </font></td>
-</tr>
-
-<tr>
-<td>move cursor to start of current line</td>
-<td><font face="Consolas" size="4"> ^ </font></td>
-</tr>
-
-<tr>
-<td>move the cursor to end of current line</td>
-<td><font face="Consolas" size="4"> $ </font></td>
-</tr>
-
-<tr>
-<td>move cursor to start of current line</td>
-<td><font face="Consolas" size="4"> 1G </font></td>
-</tr>
-
-<tr>
-<td>move the cursor to end of current line</td>
-<td><font face="Consolas" size="4"> G </font></td>
-</tr>
-
-<tr>
-<td>move the cursor to nth line</td>
-<td><font face="Consolas" size="4"> nG </font></td>
-</tr>
-
-<tr>
-<td>delete a line after the cursor</td>
-<td><font face="Consolas" size="4"> C </font></td>
-</tr>
-</tbody>
-</table>
-
-<p>Please let me know, if there is any error in above commands.</p>
+<p>Please let me know if you are not able to do it.</p>
 
                 </section>
             </article>
 
             
-                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fvieditorcommands%2f - vi%20editor%20useful%20commands by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fdisablevlcvolumeincrease%2f - Disabling%20VLC%20volume%20increase by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(
