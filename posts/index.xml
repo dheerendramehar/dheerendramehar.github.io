@@ -38,6 +38,18 @@
     </item>
     
     <item>
+      <title>Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3</title>
+      <link>https://dheerendramehar.github.io/posts/e1000tovmxnet3andvmwaretoolupgrade/</link>
+      <pubDate>Wed, 31 Oct 2018 00:52:17 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/e1000tovmxnet3andvmwaretoolupgrade/</guid>
+      <description>VMware tools installation:  You can install VMWare tools manually or automatically. Sometimes you don&amp;rsquo;t have any choice except to install manually.
+ Automatic Installation:
+ Right click on the VM -&amp;gt; Guest -&amp;gt; Install/Upgrade VMWare tools Choose Automatic Tools Upgrade and click on OK. Installation will take some time, you can see it&amp;rsquo;s status in Tasks shown at the bottom of the window.  Manual Installation:
+ Right click on the VM -&amp;gt; Guest -&amp;gt; Install/Upgrade VMWare tools Choose Interactive Tools Upgrade and click on OK.</description>
+    </item>
+    
+    <item>
       <title>Disabling VLC volume increase</title>
       <link>https://dheerendramehar.github.io/posts/disablevlcvolumeincrease/</link>
       <pubDate>Sun, 28 Oct 2018 10:24:50 +0530</pubDate>
