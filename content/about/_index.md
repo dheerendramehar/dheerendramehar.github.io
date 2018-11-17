@@ -30,7 +30,7 @@ I always wonder, how will this world look like without technolgy.
 
 Curretly i am exploring the world of DevOps and Trading.
 
-You can find my resume [here](../posts/one_page_resume).
+You can find my latest resume [here](../posts/one_page_resume).
 
 
 
