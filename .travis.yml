@@ -16,5 +16,5 @@ after_success: |
     rm -rf public hugo_*
     git add -f --ignore-errors --all
     git -c user.name='dheerendramehar' -c user.email='dheerenm95@gmail.com' commit -m init
-    git push -f -q https://$GITHUB_USER:$GITHUB_API_KEY@github.com/dheerendramehar.github.io master
+    git push -f -q https://$GITHUB_USER:$GITHUB_API_KEY@github.com/dheerendramehar/dheerendramehar.github.io master
     fi
