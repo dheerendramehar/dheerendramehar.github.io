@@ -32,6 +32,8 @@ else
 echo "$1 is empty."
 fi
 ```
+
+### Useful Code Snippets
 ```bash
 # '/sbin/pidof java | xargs pwdx' works however 'pidof java | xargs pwdx' doesn't. why?
 # Because bash is not able to find pidof command
@@ -45,6 +47,6 @@ fi
 #} < /dev/null; done
 
 ```
-# Suggested readings
+### Suggested readings
 * [Reading-1](https://stackoverflow.com/questions/13800225/shell-script-while-read-line-loop-stops-after-the-first-line)
 * [Reading-2](https://unix.stackexchange.com/questions/66154/ssh-causes-while-loop-to-stop)
