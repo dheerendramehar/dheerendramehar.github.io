@@ -1,5 +1,5 @@
 +++
-title = "PwdxOutput"
+title = "Running pwdx $(pidof java) command on remote nodes"
 date = 2018-11-27T12:25:55+05:30
 tags = [""]
 categories = [""]
