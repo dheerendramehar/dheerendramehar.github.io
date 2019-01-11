@@ -8,8 +8,9 @@ menu = "main"
 > If you can't make it better, don't make it worse. 
 
 Hi, my name is Dheerendra. I graduated in Electrical Enginnering from IIT Kanpur.
-I am blessed with a beautiful and lovely family. I love to spend time with them.  
-This is, how i look in ASC-II art.
+I am blessed with a beautiful & lovely family and I love to spend time with them.  
+
+My circle often call me <font face="Consolas"> echo "$(tr A-Za-z N-ZA-Mn-za-m <<< QuvehOunv)"</font>. This is, how i look in ASC-II art.
 <img src="/posts/images/ASC-II.png" alt="drawing" width="200"/>
 *Credits: https://asciiart.club*
 
@@ -30,7 +31,7 @@ I always wonder, how will this world look like without technolgy.
 
 Curretly i am exploring the world of DevOps and Trading.
 
-You can find my latest resume [here](../posts/one_page_resume).
+You can find my old resume from 2015 [here](../posts/resume_2015) and latest resume from 2019 [here](../posts/resume_2019).
 
 
 
