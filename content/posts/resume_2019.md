@@ -18,39 +18,51 @@ draft = false
 ## CORPORATE KEY PROJECTS
 
 1. Development Automation for Jio Coverage Platform (JCP)
-	* Objective: To setup a system for development, assigning tasks and review process
-	* Methodology: Used Git for version control and Phabricator for development process
-	Setup Phabricator’s diffusion tool to provide Github like interface for
+	* Objective
+		* To setup a system for development, assigning tasks and review process
+	* Methodology
+		* Used Git for version control and Phabricator for development process
+		* Setup Phabricator’s diffusion tool to provide Github like interface for
 	Repositories, differential tool for code review process and Maniphest tool
 	for bug tracking
-	* Results: Successfully implemented the solution for JCP
+	* Results
+		* Successfully implemented the solution for JCP
 	Improved the productivity by multi-fold
 2. Deployment and Build Automation for Self-Organising Networks (SON) and Jio Coverage Platform (JCP)
-	* Objective: To setup a system which is capable of continuous integration and
+	* Objective
+		* To setup a system which is capable of continuous integration and
 	continuous delivery(CI/CD)
-	* Methodology: Setup maven and gulp to build the executables
-	Used Ansible and wrote Ansible-playbooks to deploy the Build
-	Install and setup Jenkins to put all tools together, automate the build and
-	deployment process
-	* Results: Successfully implemented the solution for SON and JCP Platforms
+	* Methodology
+		* Setup maven and gulp to build the executables
+		* Used Ansible and wrote Ansible-playbooks to deploy the Build
+		* Install and setup Jenkins to put all tools together, automate the build and
+		deployment process
+	* Results
+		* Successfully implemented the solution for SON and JCP Platforms
 	Reduced the Build and deployment time by multi-fold
 3. PostgreSQL High Availability and Load Balancing setup for Wi-Fi SON
-	* Objective: To setup a system which is highly available, capable of load balancing and
+	* Objective
+		* To setup a system which is highly available, capable of load balancing and
 	returns up-to-date data when requested
-	* Methodology: Installed Pgpool for getting queries, load balancing, pooling connections to
+	* Methodology
+		* Installed Pgpool for getting queries, load balancing, pooling connections to
 	PostgreSQL nodes and monitor their status
-	Configured Pgpool for High Availability using Watchdog
-	Installed Repmgr to control the replication between redundant PostgreSQL
+		* Configured Pgpool for High Availability using Watchdog
+		* Installed Repmgr to control the replication between redundant PostgreSQL
 	database nodes
-	* Results: Successfully tested and implemented the solution for Mumbai Wi-Fi SON Cluster
+	* Results
+		* Successfully tested and implemented the solution for Mumbai Wi-Fi SON Cluster
 4. Nagios Core setup for monitoring SON clusters across PAN-India
-	* Objective: To setup a system which can monitor resource utilization and service
+	* Objective
+		* To setup a system which can monitor resource utilization and service
 	availability on remote servers
-	* Methodology: Wrote bash scripts and setup NRPE agent to get the data from remote servers
-	Installed PNP4Nagios and RRD tool on Nagios server to show the graphical
+	* Methodology
+		* Wrote bash scripts and setup NRPE agent to get the data from remote servers
+		* Installed PNP4Nagios and RRD tool on Nagios server to show the graphical
 	view of data
-	Integrated and configured the Nagios with NRPE agent, PNP4Nagios and RRD
-	* Results: Successfully tested and implemented the solution for SON Cluster (205 VMs)
+		* Integrated and configured the Nagios with NRPE agent, PNP4Nagios and RRD
+	* Results
+		* Successfully tested and implemented the solution for SON Cluster (205 VMs)
 	Optimized the cost for organisation by replacing the earlier used proprietary
 	software Solarwind
 
