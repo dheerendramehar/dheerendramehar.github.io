@@ -10,7 +10,7 @@ menu = "main"
 Hi, my name is Dheerendra. I graduated in Electrical Enginnering from IIT Kanpur.
 I am blessed with a beautiful & lovely family and I love to spend time with them.  
 
-My circle often call me <font face="Consolas"> echo "$(tr A-Za-z N-ZA-Mn-za-m <<< QuvehOunv)"</font>. This is, how i look in ASC-II art.
+My circle often call me ```echo $(tr A-Za-z N-ZA-Mn-za-m <<< QuvehOunv)```. This is, how i look in ASC-II art.
 <img src="/posts/images/ASC-II.png" alt="drawing" width="200"/>
 *Credits: https://asciiart.club*
 
