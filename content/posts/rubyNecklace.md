@@ -21,11 +21,12 @@ a **straight** line to make the necklace. But, there are a couple of rules to be
 * A yellow ruby should be followed by either a blue ruby or a red ruby
 * If it is possible, we should always start a necklace with a blue or a red ruby 
 
-Can you tell what is the maximum possible length of the necklace that Krishna can make. The length of a necklace is the number of rubies in it. 
+**Can you tell what is the maximum possible length of the necklace that Krishna can make. The length of a necklace is the number of rubies in it.**
 
 
 
 ## Input Format 
+
 * The first line contains an integer representing b
 * The second line contains an integer representing r
 * The third line contains an integer representing y
@@ -33,55 +34,54 @@ Can you tell what is the maximum possible length of the necklace that Krishna ca
 	
 ## Constraints
 
-> 0 <= b, r, y, g <= 2000 
-
-> At least one of b,r,y,g is greater than 0 
+* 0 <= b, r, y, g <= 2000 
+* At least one of b, r, y, g is greater than 0 
 
 ## Output Format 
+
 A single integer which is the answer to the problem. 
 
 ## Sample TestCase 1 
 
 Input 
 
+```
 1
-
 1
-
 1
-
 0
+```
 
 Output 
 
+```
 3
+```
 
-Explanation 
+Example
+
 One such necklace is **Blue Red Green**. 
 
 ## Sample TestCase 2 
 
 Input 
-
+```
 1
-
 1
-
 1
-
 1
-
+```
 Output 
-
+```
 4
+```
+Example
 
-Explanation 
-
-**Blue Red Green Yellow**. 
-
-
+One such necklace is **Blue Red Green Yellow**. 
 
 ## Solutions
+
+### Solution to problem in C is as follows:
 
 ```c
 #include <stdio.h>
@@ -159,6 +159,7 @@ void main()
 }
 ```
 
+### Solution to problem in Python is as follows:
 
 ```python
 def necklaceLenth(blue, red, yelloww, green):
@@ -215,5 +216,5 @@ green = int(input())
 print(necklaceLenth(blue,red,yellow,green))
 ```
 
-This problem is from first round Techgig Code Gladiators 2018. Where i made it to finals.
+This problem is from first round of Techgig Code Gladiators 2018. Where i made it to finals.
 
