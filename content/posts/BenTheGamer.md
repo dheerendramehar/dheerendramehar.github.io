@@ -1,5 +1,5 @@
 +++
-title = "Ben- The Gamer"
+title = "Ben - The Gamer"
 date = 2019-01-13T23:20:49+05:30
 tags = [""]
 categories = [""]
@@ -8,23 +8,31 @@ draft = false
 
 ## Ben - The Gamer (100 Marks)
 
-Ben is one of the best gamers in India. He also happens to be an excellent programmer. So, he likes to play games which require use of both gaming skills as well as programming skills. One such game is SpaceWar.
+Ben is one of the best gamers in India. He also happens to be an excellent programmer.
+So, he likes to play games which require use of both gaming skills as well as programming skills. One such game is SpaceWar.
 
-In this game there are N levels and M types of available weapons. The levels are numbered from 0 to N-1 and the weapons are numbered from 0 to M-1 . Ben can clear these levels in any order. In each level, some subset of these M weapons is required to clear this level. If in a particular level, Ben needs to buy x new weapons, he will pay x2 coins for it. Also note that Ben can carry all the weapons he has currently to the next level . Initially, Ben has no weapons. Can you tell the minimum coins required such that Ben can clear all the levels. 
+In this game there are N levels and M types of available weapons. The levels are numbered from 0 to N-1 and the weapons are numbered from 0 to M-1.
+Ben can clear these levels in any order. In each level, some subset of these M weapons is required to clear this level. If in a particular level,
+Ben needs to buy x new weapons, he will pay x&#x00B2; coins for it. Also note that Ben can carry all the weapons he has currently to the next level. 
+Initially, Ben has no weapons. Can you tell the minimum coins required such that Ben can clear all the levels. 
+
 ### Input Format
+
 * The first line of input contains 2 space separated integers; 
 * N - the number of levels in the game and M - the number of types of weapons.
 * N lines follows. The ith of these lines contains a binary string of length M. If the jth character of
 this string is 1 , it means we need a weapon of type j to clear the ith level.
 
 ### Constraints
+
 * 1 <= N <=20
 * 1<= M <= 20
 
 ### Output Format
+
 Print a single integer which is the answer to the problem.
 
-### Sample TestCase 1
+### Sample Test Case 1
 
 Input
 ```
@@ -36,9 +44,12 @@ Output
 4
 ```
 #### Explanation
-There is only one level in this game. We need 2 types of weapons - 1 and 3. Since, initially Ben has no weapons he will have to buy these, which will cost him 2&#x00B2; = 4 coins.
 
-### Sample TestCase 2
+There is only one level in this game. We need 2 types of weapons - 1 and 3. Since, initially Ben has no weapons he will have to buy these, 
+which will cost him 2&#x00B2; = 4 coins.
+
+### Sample Test Case 2
+
 Input
 ```
 3 3
@@ -51,11 +62,15 @@ Output
 3
 ```
 #### Explanation
-There are 3 levels in this game. The 0th level (111) requires all 3 types of weapons. The 1st level (001) requires only weapon of type 2. The 2nd level requires only weapon of type 1. If we clear the levels in the given order(0-1-2), total cost = 3&#x00B2; + 0&#x00B2; + 0&#x00B2; = 9 coins. If we clear the levels in the order 1-2-0, it will cost = 1&#x00B2; + 1&#x00B2; + 1&#x00B2; = 3 coins which is the optimal way.
+
+There are 3 levels in this game. The 0th level (111) requires all 3 types of weapons. The 1st level (001) requires only weapon of type 2. 
+The 2nd level requires only weapon of type 1. If we clear the levels in the given order(0-1-2), total cost = 3&#x00B2; + 0&#x00B2; + 0&#x00B2; = 9 coins. 
+If we clear the levels in the order 1-2-0, it will cost = 1&#x00B2; + 1&#x00B2; + 1&#x00B2; = 3 coins which is the optimal way.
 
 ### Solution
 
 #### Solution to problem in C is as follows:
+
 ```
 #include<stdio.h>
 #include<stdlib.h>
@@ -158,8 +173,8 @@ void main()
 }
 ```
 
-
 #### Solution to problem in Python is as follows:
+
 ```
 def costCal(orArr, weaponPattern, numWeapons):
     costCnt=0
@@ -226,3 +241,5 @@ def main():
 
 main()
 ```
+
+This problem is from first round of Techgig Code Gladiators 2018. Where i made it to finals.
