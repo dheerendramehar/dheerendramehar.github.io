@@ -162,7 +162,7 @@ void main()
 ### Solution to problem in Python is as follows:
 
 ```python
-def necklaceLenth(blue, red, yelloww, green):
+def necklaceLenth(blue, red, yellow, green):
     if((blue!=0) and (green==0) and (red==0) and (yellow==0)):
         return blue
     elif ((blue==0) and (green!=0)and (red==0)and (yellow==0)):
