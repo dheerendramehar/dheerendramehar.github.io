@@ -69,13 +69,17 @@ hasCJKLanguage = false
 
 	# Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
 	iconFont = "font-awesome"
-  # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
-  socialIconStyle = ""
+    # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+    socialIconStyle = ""
+	
+	# For indexing in Google Search
+	enableRobotsTXT = true
+    canonifyURLs = true
 
 
 # Add additional social link entries underneath
 [social]
-        instagram = "https://www.instagram.com/dheerendramehar"
+    instagram = "https://www.instagram.com/dheerendramehar"
 	facebook-square = "https://www.facebook.com/dheerem"
 	#twitter-square = "https://www.twitter.com/dhirendramehar"
 	github-square = "https://github.com/dheerendramehar"
