@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://dheerendramehar.github.io/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Running pwdx $(pidof java) command on remote nodes"/>
+  <meta name="twitter:description" content="Script to get output of pwdx $(pidof java) command
+#!/bin/bash if [ &quot;$1&quot; ]; then echo &quot;you are good to go&quot; else echo &quot;Usage: $(basename &quot;$0&quot;) takes an ip file as input&quot; exit fi if [ -s &quot;$1&quot; ]; then echo &quot;Good!Got something inside the file&quot; while IFS= read -r line # IFS= before read to avoid removing leading and trailing spaces do { remote_output=&quot;$(ssh -qni &lt;path-to-your-private-ssh-key&gt; &lt;username&gt;@&quot;$line&quot; &quot;pgrep java | xargs pwdx&quot;)&quot; echo -e &quot;$line&quot;&quot;\n&quot;&quot;$remote_output&quot;&quot;\n&quot; | tee -a pwdx_output."/>
+  
+    <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Dheerendra Mehar"/>
+  
+
+
+
+		
+		<meta name="author" content="Dheerendra Mehar">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.46" />
+		<title>Running pwdx $(pidof java) command on remote nodes &middot; Dheerendra Mehar</title>
+		<link rel="shortcut icon" href="https://dheerendramehar.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/style.css">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://dheerendramehar.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Dheerendra Mehar" />
+		
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/custom.css">
+		
+		
+		<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://dheerendramehar.github.io/"
+    },
+    "articleSection" : "posts",
+    "name" : "Running pwdx $(pidof java) command on remote nodes",
+    "headline" : "Running pwdx $(pidof java) command on remote nodes",
+    "description" : "Script to get output of pwdx $(pidof java) command
+#!/bin/bash if [ &quot;$1&quot; ]; then echo &quot;you are good to go&quot; else echo &quot;Usage: $(basename &quot;$0&quot;) takes an ip file as input&quot; exit fi if [ -s &quot;$1&quot; ]; then echo &quot;Good!Got something inside the file&quot; while IFS= read -r line # IFS= before read to avoid removing leading and trailing spaces do { remote_output=&quot;$(ssh -qni &lt;path-to-your-private-ssh-key&gt; &lt;username&gt;@&quot;$line&quot; &quot;pgrep java | xargs pwdx&quot;)&quot; echo -e &quot;$line&quot;&quot;\n&quot;&quot;$remote_output&quot;&quot;\n&quot; | tee -a pwdx_output.",
+    "inLanguage" : "en-US",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-11-27 12:25:55 &#43;0530 IST",
+    "dateModified" : "2018-11-27 12:25:55 &#43;0530 IST",
+    "url" : "https://dheerendramehar.github.io/posts/pwdxoutput/",
+    "wordCount" : "168",
+    "keywords" : [ "","Blog" ]
+}
+</script>
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://dheerendramehar.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://dheerendramehar.github.io/posts'>Archive</a>
+	<a href='https://dheerendramehar.github.io/tags'>Tags</a>
+	<a href='https://dheerendramehar.github.io/myphotos'>MyPhotos</a>
+	<a href='https://dheerendramehar.github.io/about'>About</a>
+
+	
+
+	
+	 
+	 
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Running pwdx $(pidof java) command on remote nodes
+                    </h1>
+                    <h2 class="headline">
+                    Nov 27, 2018 12:25
+                    · 168 words
+                    · 1 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://dheerendramehar.github.io/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#useful-code-snippets">Useful Code Snippets</a></li>
+<li><a href="#suggested-readings">Suggested readings</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    
+
+<p><em>Script to get output of pwdx $(pidof java) command</em></p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+if [ &quot;$1&quot; ]; then
+echo &quot;you are good to go&quot;
+else
+echo &quot;Usage: $(basename &quot;$0&quot;) takes an ip file as input&quot;
+exit
+fi
+
+if [ -s &quot;$1&quot; ]; then
+echo &quot;Good!Got something inside the file&quot;
+
+while IFS= read -r line # IFS= before read to avoid removing leading and trailing spaces
+
+do {
+remote_output=&quot;$(ssh -qni &lt;path-to-your-private-ssh-key&gt; &lt;username&gt;@&quot;$line&quot; &quot;pgrep java | xargs pwdx&quot;)&quot;
+echo -e &quot;$line&quot;&quot;\n&quot;&quot;$remote_output&quot;&quot;\n&quot; | tee -a pwdx_output.txt
+} done &lt; &quot;$1&quot;
+
+else
+echo &quot;$1 is empty.&quot;
+fi
+</code></pre>
+
+<h3 id="useful-code-snippets">Useful Code Snippets</h3>
+
+<pre><code class="language-bash"># '/sbin/pidof java | xargs pwdx' works however 'pidof java | xargs pwdx' doesn't. why?
+# Because bash is not able to find pidof command
+# Also 'pwdx $(pidof java)' doesn't work due to creation of new subshell. HW: do the RCA.
+
+## Another Way
+#cat &quot;$1&quot; | while IFS= read -r line
+#do {
+#remote_output=&quot;$(ssh -qi &lt;path-to-your-private-ssh-key&gt; &lt;username&gt;@&quot;$line&quot; &quot;pgrep java | xargs pwdx&quot;)&quot;
+#echo -e &quot;$line&quot;&quot;\n&quot;&quot;$remote_output&quot;&quot;\n&quot;
+#} &lt; /dev/null; done
+
+</code></pre>
+
+<h3 id="suggested-readings">Suggested readings</h3>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/13800225/shell-script-while-read-line-loop-stops-after-the-first-line">Reading-1</a></li>
+<li><a href="https://unix.stackexchange.com/questions/66154/ssh-causes-while-loop-to-stop">Reading-2</a></li>
+</ul>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fpwdxoutput%2f - Running%20pwdx%20%24%28pidof%20java%29%20command%20on%20remote%20nodes by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dheerendramehar-github'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/dheerem">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/dheerendramehar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.instagram.com/dheerendramehar">
+        <i class="fa fa-instagram"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2019 <i class="fa fa-heart" aria-hidden="true"></i> Dheerendra Mehar
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://dheerendramehar.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://dheerendramehar.github.io/js/main.js"></script>
+<script src="https://dheerendramehar.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'your_google_analytics_id', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>
