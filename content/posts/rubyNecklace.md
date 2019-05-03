@@ -1,6 +1,6 @@
 +++
 title = "Ruby Necklace"
-date = 2019-01-13T13:17:37+05:30
+date = 2019-01-12T13:17:37+05:30
 tags = [""]
 categories = [""]
 draft = false
