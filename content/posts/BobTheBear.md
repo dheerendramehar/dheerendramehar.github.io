@@ -1,9 +1,10 @@
 +++
 title = "BobTheBear"
-date = 2019-05-03T16:28:33+05:30
+date = 2019-01-15T16:28:33+05:30
 tags = [""]
 categories = [""]
 draft = false
+publishdate = 2019-01-15
 +++
 
 ## Bob - The Bear (100 Marks)
