@@ -1,5 +1,5 @@
 +++
-title = "FloodInTheJungle"
+title = "Flood In The Jungle"
 date = 2019-01-16T16:55:50+05:30
 tags = [""]
 categories = [""]
@@ -67,6 +67,8 @@ The meeting can happen on all the trees
 
 
 ### Solution
+
+<img src="/posts/images/floodinthejungle.png" alt="drawing" width="200"/>
 
 #### Solution to problem in Python is as follows:
 
