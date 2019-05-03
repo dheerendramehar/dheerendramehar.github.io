@@ -5,8 +5,7 @@ tags = [""]
 categories = [""]
 draft = false
 
-date: 2019-01-12
-publishdate: 2019-01-12
+publishdate = 2019-01-12
 +++
 
 
