@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://dheerendramehar.github.io/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="How to get Internet on a server using Squid Proxy and SSH port forwarding"/>
+  <meta name="twitter:description" content="Do the setup as follows:
+Setup on Host A:
+ Install proxy server Squid on Host A . By default Squid listens on port 3128.
+yum install squid Comment the http_access deny all then add http_access allow all in /etc/squid/squid.conf If Host A itself uses some proxy say 10.140.78.130:8080 to connect to internet then also add that proxy to /etc/squid/squid.conf as follows:  refresh_pattern (Release|Packages(.gz)*)$ 0 20% 2880 cache_peer 10.140.78.130 parent 8080 0 no-query default never_direct allow all   Setup on Host B:"/>
+  
+    <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Dheerendra Mehar"/>
+  
+
+
+
+		
+		<meta name="author" content="Dheerendra Mehar">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.46" />
+		<title>How to get Internet on a server using Squid Proxy and SSH port forwarding &middot; Dheerendra Mehar</title>
+		<link rel="shortcut icon" href="https://dheerendramehar.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/style.css">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://dheerendramehar.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Dheerendra Mehar" />
+		
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/custom.css">
+		
+		
+		<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://dheerendramehar.github.io/"
+    },
+    "articleSection" : "posts",
+    "name" : "How to get Internet on a server using Squid Proxy and SSH port forwarding",
+    "headline" : "How to get Internet on a server using Squid Proxy and SSH port forwarding",
+    "description" : "Do the setup as follows:
+Setup on Host A:
+ Install proxy server Squid on Host A . By default Squid listens on port 3128.
+yum install squid Comment the http_access deny all then add http_access allow all in /etc/squid/squid.conf If Host A itself uses some proxy say 10.140.78.130:8080 to connect to internet then also add that proxy to /etc/squid/squid.conf as follows:  refresh_pattern (Release|Packages(.gz)*)$ 0 20% 2880 cache_peer 10.140.78.130 parent 8080 0 no-query default never_direct allow all   Setup on Host B:",
+    "inLanguage" : "en-US",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-12-27 00:39:22 &#43;0530 &#43;0530",
+    "dateModified" : "2018-12-27 00:39:22 &#43;0530 &#43;0530",
+    "url" : "https://dheerendramehar.github.io/posts/givinginternetaccesstoserver/",
+    "wordCount" : "144",
+    "keywords" : [ "","Blog" ]
+}
+</script>
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://dheerendramehar.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://dheerendramehar.github.io/posts'>Archive</a>
+	<a href='https://dheerendramehar.github.io/tags'>Tags</a>
+	
+	<a href='https://dheerendramehar.github.io/about'>About</a>
+
+	
+
+	
+	 
+	 
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        How to get Internet on a server using Squid Proxy and SSH port forwarding
+                    </h1>
+                    <h2 class="headline">
+                    Dec 27, 2018 00:39
+                    · 144 words
+                    · 1 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://dheerendramehar.github.io/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                
+                <section id="post-body">
+                    <p>Do the setup as follows:</p>
+
+<p><strong>Setup on Host A:</strong></p>
+
+<ol>
+<li>Install proxy server Squid on Host A . By default Squid listens on port 3128.<br />
+<code>yum install squid</code></li>
+<li>Comment the <code>http_access deny all</code> then add <code>http_access allow all</code> in /etc/squid/squid.conf</li>
+<li>If Host A itself uses some proxy say 10.140.78.130:8080 to connect to internet then also add that proxy to <code>/etc/squid/squid.conf</code> as follows:
+<code>
+refresh_pattern (Release|Packages(.gz)*)$ 0 20% 2880
+cache_peer 10.140.78.130 parent 8080 0 no-query default
+never_direct allow all
+</code></li>
+</ol>
+
+<p><strong>Setup on Host B:</strong></p>
+
+<ol>
+<li>Add the following entries to /etc/environment
+<code>
+export http_proxy=http://127.0.0.1:3129
+export https_proxy=http://127.0.0.1:3129
+</code></li>
+<li><code>source /etc/environment</code></li>
+</ol>
+
+<p>Now our setup is complete.</p>
+
+<p><strong>Creating SSH tunnel with Remote port forwarding</strong></p>
+
+<ol>
+<li>Run the follwoing SSH command from Host A<br />
+<code>ssh -R 3129:localhost:3128 user@HostB</code></li>
+<li>This will allow Host B to access the internet through Host A.</li>
+</ol>
+
+<p><strong>Checking the internet:</strong></p>
+
+<ol>
+<li>Run the following command from Host B<br />
+<code>wget https://google.com</code></li>
+</ol>
+
+<p><strong>Traffic flow diagram</strong> :
+<a href="https://i.stack.imgur.com/NSVV7.jpg"><img src="https://i.stack.imgur.com/NSVV7.jpg" alt="enter image description here" /></a></p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fgivinginternetaccesstoserver%2f - How%20to%20get%20Internet%20on%20a%20server%20using%20Squid%20Proxy%20and%20SSH%20port%20forwarding by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dheerendramehar-github'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/dheerem">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/dheerendramehar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.instagram.com/dheerendramehar">
+        <i class="fa fa-instagram"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2019 <i class="fa fa-heart" aria-hidden="true"></i> Dheerendra Mehar
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://dheerendramehar.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://dheerendramehar.github.io/js/main.js"></script>
+<script src="https://dheerendramehar.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'your_google_analytics_id', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Dheerendra Mehar</title>
+    <link>https://dheerendramehar.github.io/posts/</link>
+    <description>Recent content in Posts on Dheerendra Mehar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Jan 2019 16:55:50 +0530</lastBuildDate>
+    
+	<atom:link href="https://dheerendramehar.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flood In The Jungle</title>
+      <link>https://dheerendramehar.github.io/posts/floodinthejungle/</link>
+      <pubDate>Wed, 16 Jan 2019 16:55:50 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/floodinthejungle/</guid>
+      <description>Flood in the Jungle (100 Marks) A group of monkeys are living in Sunderbans forests. There are N trees in Sunderbans (numbered from O to N-l) on which these monkeys live. Every year floods hit the forest of Sunderbans The monkeys have a tradition of meeting on a tree after the flood. Last night Sunderbans has been hit hard by a sudden flood. The flood was very strong and it has submerged everything except the mighty trees on which the monkeys live.</description>
+    </item>
+    
+    <item>
+      <title>Bob The Bear</title>
+      <link>https://dheerendramehar.github.io/posts/bobthebear/</link>
+      <pubDate>Tue, 15 Jan 2019 16:28:33 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/bobthebear/</guid>
+      <description>Bob - The Bear (100 Marks) Bob is a grizzly bear and just like all grizzlies he loves hunting salmon fish. Bob has a strategy for catching salmons. He stands at the edge of the river and waits for the fishes to cross him. Whenever a fish comes in the same line as that of Bob, he catches it
+For the sake of the problem assume the river is flowing from left to right and Bob is currently sitting at x-coordinate = 0 (origin).</description>
+    </item>
+    
+    <item>
+      <title>Ben - The Gamer</title>
+      <link>https://dheerendramehar.github.io/posts/benthegamer/</link>
+      <pubDate>Sun, 13 Jan 2019 23:20:49 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/benthegamer/</guid>
+      <description>Ben - The Gamer (100 Marks) Ben is one of the best gamers in India. He also happens to be an excellent programmer. So, he likes to play games which require use of both gaming skills as well as programming skills. One such game is SpaceWar.
+In this game there are N levels and M types of available weapons. The levels are numbered from 0 to N-1 and the weapons are numbered from 0 to M-1.</description>
+    </item>
+    
+    <item>
+      <title>Ruby Necklace</title>
+      <link>https://dheerendramehar.github.io/posts/rubynecklace/</link>
+      <pubDate>Sat, 12 Jan 2019 13:17:37 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/rubynecklace/</guid>
+      <description>Ruby Necklace (100 Marks) It is the wedding day of Sanchi, the beautiful princess of Byteland. Her fiance Krishna is planning to gift her an awesome ruby necklace. Krishna has currently b-blue rubies, g-green rubies, r-red rubies and y-yellow rubies. He has to arrange the rubies next to each other in a straight line to make the necklace. But, there are a couple of rules to be followed while making this necklace:</description>
+    </item>
+    
+    <item>
+      <title>Resume 2019</title>
+      <link>https://dheerendramehar.github.io/posts/resume_2019/</link>
+      <pubDate>Fri, 11 Jan 2019 11:50:47 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/resume_2019/</guid>
+      <description>CONTACT ME    Email dheerenm95@gmail.com     Mobile +91- 8948317115    WORK EXPERIENCE 2 years 6 months (May 2016 – Present) | DevOps Engineer | Reliance Jio Infocomm Limited
+CORPORATE KEY PROJECTS  Development Automation for Jio Coverage Platform (JCP)  Objective  To setup a system for development, assigning tasks and review process  Methodology  Used Git for version control and Phabricator for development process Setup Phabricator’s diffusion tool to provide Github like interface for Repositories, differential tool for code review process and Maniphest tool for bug tracking  Results  Successfully implemented the solution for JCP Improved the productivity by multi-fold   Deployment and Build Automation for Self-Organising Networks (SON) and Jio Coverage Platform (JCP)  Objective  To setup a system which is capable of continuous integration and continuous delivery(CI/CD)  Methodology  Setup maven and gulp to build the executables Used Ansible and wrote Ansible-playbooks to deploy the Build Install and setup Jenkins to put all tools together, automate the build and deployment process  Results  Successfully implemented the solution for SON and JCP Platforms Reduced the Build and deployment time by multi-fold   PostgreSQL High Availability and Load Balancing setup for Wi-Fi SON  Objective  To setup a system which is highly available, capable of load balancing and returns up-to-date data when requested  Methodology  Installed Pgpool for getting queries, load balancing, pooling connections to PostgreSQL nodes and monitor their status Configured Pgpool for High Availability using Watchdog Installed Repmgr to control the replication between redundant PostgreSQL database nodes  Results  Successfully tested and implemented the solution for Mumbai Wi-Fi SON Cluster   Nagios Core setup for monitoring SON clusters across PAN-India  Objective  To setup a system which can monitor resource utilization and service availability on remote servers  Methodology  Wrote bash scripts and setup NRPE agent to get the data from remote servers Installed PNP4Nagios and RRD tool on Nagios server to show the graphical view of data Integrated and configured the Nagios with NRPE agent, PNP4Nagios and RRD  Results  Successfully tested and implemented the solution for SON Cluster (205 VMs) Optimized the cost for organisation by replacing the earlier used proprietary software Solarwind    CORPORATE KEY CONTRIBUTIONS  Responsible for upgrading and managing SON-Software, patches and packages across PAN-India SON clusters on 205 SON VMs Responsible for sanity testing of SON software and writing sanity test cases for SON Increased team productivity by automating repetitive tasks using shell scripts and ansible playbooks Acted as L2 level support for troubleshooting System and Application related issues for SON Trained employees and freshers on Linux, Ansible, Git, Jenkins, Eclipse and Phabricator Directed upgrade of e1000 to VMXNET3 network adapter and Centos6.</description>
+    </item>
+    
+    <item>
+      <title>How to get Internet on a server using Squid Proxy and SSH port forwarding</title>
+      <link>https://dheerendramehar.github.io/posts/givinginternetaccesstoserver/</link>
+      <pubDate>Thu, 27 Dec 2018 00:39:22 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/givinginternetaccesstoserver/</guid>
+      <description>Do the setup as follows:
+Setup on Host A:
+ Install proxy server Squid on Host A . By default Squid listens on port 3128.
+yum install squid Comment the http_access deny all then add http_access allow all in /etc/squid/squid.conf If Host A itself uses some proxy say 10.140.78.130:8080 to connect to internet then also add that proxy to /etc/squid/squid.conf as follows:  refresh_pattern (Release|Packages(.gz)*)$ 0 20% 2880 cache_peer 10.140.78.130 parent 8080 0 no-query default never_direct allow all   Setup on Host B:</description>
+    </item>
+    
+    <item>
+      <title>How to create a cronjob using Ansible</title>
+      <link>https://dheerendramehar.github.io/posts/set_crontab/</link>
+      <pubDate>Mon, 17 Dec 2018 16:04:36 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/set_crontab/</guid>
+      <description>How to create a cronjob using Ansible:
+--- - name: Playbook to add new entries in crontab hosts: all remote_user: user_name tasks: - name: check whether user_name has permission to create crontab shell: &#39;grep &amp;quot;user_name&amp;quot; /etc/cron.allow&#39; register: user_status failed_when: &amp;quot;user_status.rc == 2&amp;quot; changed_when: false become: yes - name: Add user to /etc/cron.allow if it doesn&#39;t exist shell: &#39;echo &amp;quot;user_name&amp;quot; | sudo tee -a /etc/cron.allow&#39; when: user_status.rc == 1 - name: add new crontab entry if the user is newly added shell: &#39;echo &amp;quot;43 15 * * * /bin/bash /home/user_name/script_name.</description>
+    </item>
+    
+    <item>
+      <title>Running pwdx $(pidof java) command on remote nodes</title>
+      <link>https://dheerendramehar.github.io/posts/pwdxoutput/</link>
+      <pubDate>Tue, 27 Nov 2018 12:25:55 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/pwdxoutput/</guid>
+      <description>Script to get output of pwdx $(pidof java) command
+#!/bin/bash if [ &amp;quot;$1&amp;quot; ]; then echo &amp;quot;you are good to go&amp;quot; else echo &amp;quot;Usage: $(basename &amp;quot;$0&amp;quot;) takes an ip file as input&amp;quot; exit fi if [ -s &amp;quot;$1&amp;quot; ]; then echo &amp;quot;Good!Got something inside the file&amp;quot; while IFS= read -r line # IFS= before read to avoid removing leading and trailing spaces do { remote_output=&amp;quot;$(ssh -qni &amp;lt;path-to-your-private-ssh-key&amp;gt; &amp;lt;username&amp;gt;@&amp;quot;$line&amp;quot; &amp;quot;pgrep java | xargs pwdx&amp;quot;)&amp;quot; echo -e &amp;quot;$line&amp;quot;&amp;quot;\n&amp;quot;&amp;quot;$remote_output&amp;quot;&amp;quot;\n&amp;quot; | tee -a pwdx_output.</description>
+    </item>
+    
+    <item>
+      <title>Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3</title>
+      <link>https://dheerendramehar.github.io/posts/e1000tovmxnet3andvmwaretoolupgrade/</link>
+      <pubDate>Wed, 31 Oct 2018 00:52:17 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/e1000tovmxnet3andvmwaretoolupgrade/</guid>
+      <description>VMware tools installation:  You can install VMWare tools manually or automatically. Sometimes you don&amp;rsquo;t have any choice except to install manually.
+ Automatic Installation:
+ Right click on the VM -&amp;gt; Guest -&amp;gt; Install/Upgrade VMWare tools Choose Automatic Tools Upgrade and click on OK. Installation will take some time, you can see it&amp;rsquo;s status in Tasks shown at the bottom of the window.  Manual Installation:
+ Right click on the VM -&amp;gt; Guest -&amp;gt; Install/Upgrade VMWare tools Choose Interactive Tools Upgrade and click on OK.</description>
+    </item>
+    
+    <item>
+      <title>Disabling VLC volume increase</title>
+      <link>https://dheerendramehar.github.io/posts/disablevlcvolumeincrease/</link>
+      <pubDate>Sun, 28 Oct 2018 10:24:50 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/disablevlcvolumeincrease/</guid>
+      <description>If you use the VLC player, it is suggested that you do not increase the volume higher than 100% in order to avoid potential damage to speakers.
+Why is it needed? Increasing volume above 100% in VLC can damage your speakers. Dell and HP do not cover this damage under warranty.
+Why does it happen? The VLC player can allow large power output through speaker than the original sound output.</description>
+    </item>
+    
+    <item>
+      <title>vi editor useful commands</title>
+      <link>https://dheerendramehar.github.io/posts/vieditorcommands/</link>
+      <pubDate>Tue, 23 Oct 2018 00:01:34 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/vieditorcommands/</guid>
+      <description>Description Command     comment all the lines :%s/^/#    uncommnet all the lines :%s/^#/    comment line no. m to n :m,ns/^/#    uncomment line no. m to n :m,ns/^#/    add comma after all the lines :%s/$/,    remove comma after all the lines :%s/,$/    remove comma after line no. m to n :m,ns/,$/    search for a string from forward /string    search for a string from backward ?</description>
+    </item>
+    
+    <item>
+      <title>Everyday Linux hacks and tips</title>
+      <link>https://dheerendramehar.github.io/posts/everydaylinuxhacksandtips/</link>
+      <pubDate>Sun, 07 Oct 2018 11:08:35 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/everydaylinuxhacksandtips/</guid>
+      <description>Here are some useful linux commands, i frequently use
+1. Removing grep result from ps output  ps aux | grep [d]hcp  By putting brackets, we are searching for a regex and preventing grep from matching itself. Since [d]hcp doesn&amp;rsquo;t match the [d]hcp regular expression, so grep won&amp;rsquo;t show up in the results.
+To understand more, play with ps, grep and regex.
+Below is the ouput of above command with and without brackets.</description>
+    </item>
+    
+    <item>
+      <title>Resolving SSH Authentication issues</title>
+      <link>https://dheerendramehar.github.io/posts/sshauthentication/</link>
+      <pubDate>Fri, 28 Sep 2018 22:14:40 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/sshauthentication/</guid>
+      <description>How to resolve SSH Authentication issues 1. Problem: I wanted to access an Ubuntu node from a CentOS node without any password. To accomplish this, i needed to setup SSH keys. So I followed the following steps:
+a. Generated SSH keys using ssh-keyzen
+ubuntu@ubuntu_node:~$ ssh-keygen  here two keys are generated /your_home/.ssh/id_rsa and /your_home/.ssh/id_rsa.pub . First one is private key and second is public key.
+b. Copy the public key to authorized_keys on remote node(in my case a CentOS node) using ssh-copy-id</description>
+    </item>
+    
+    <item>
+      <title>Carrige return(\r) addition to a file in Windows</title>
+      <link>https://dheerendramehar.github.io/posts/carriagereturn/</link>
+      <pubDate>Sun, 23 Sep 2018 10:26:48 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/carriagereturn/</guid>
+      <description>1. Problem While writing a bash script in Unix, i found that if i create a file in Windows and use it it in a bash script, script fails. When digging deeper into the issue, i got to know that this was due to carriage return(\r), which was added when i modified the file in Windows(\r).
+2. Basics In old days when people had to use Typewriters, they had to do two things frequently</description>
+    </item>
+    
+    <item>
+      <title>Resume 2015</title>
+      <link>https://dheerendramehar.github.io/posts/resume_2015/</link>
+      <pubDate>Sat, 22 Sep 2018 21:08:16 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/resume_2015/</guid>
+      <description>CONTACT ME    Email dheerenm95@gmail.com     Mobile +91- 8948317115    EDUCATION    Year Degree Institution CGPA/%     2012-16 B.Tech(EE) Indian Institute of Technology Kanpur 6.7&amp;frasl;10   2011 XII (RBSE) Gyandeep Sr. Sec. School Gangapurcity 89.85%   2009 X (RBSE) Govt. Sec. School Shekhpura 90.17%    ACHIEVEMENTS  Secured Second Position among 60 teams in Sky sparks-Techkriti’15, IIT Kanpur (Mar’15)  Qualified for National Finals held at IIT Delhi sponsored by Boeing Designed, built and flied an aircraft which can do simple maneuvers and gliding Experimented and checked performance by making four prototypes having different airfoils and simulating in XFLR Software  Secured First Position in Cruise Control-Techkriti’15, IIT Kanpur (Mar’15)  Performed all the listed maneuvers on Remote Controlled(RC) IC-Engine low winger aircraft Obtained maximum glide time and did spot landing Secured First Position among 95 teams in Aviator Design Challenge-Techfest’14, IIT Bombay (Jan’14) Designed, built and maneuvered an RC aircraft and achieved a payload fraction of 0.</description>
+    </item>
+    
+  </channel>
+</rss>

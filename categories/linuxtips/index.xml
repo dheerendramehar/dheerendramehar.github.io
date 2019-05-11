@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linuxtips on Dheerendra Mehar</title>
+    <link>https://dheerendramehar.github.io/categories/linuxtips/</link>
+    <description>Recent content in Linuxtips on Dheerendra Mehar</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 28 Sep 2018 22:14:40 +0530</lastBuildDate>
+    
+	<atom:link href="https://dheerendramehar.github.io/categories/linuxtips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Resolving SSH Authentication issues</title>
+      <link>https://dheerendramehar.github.io/posts/sshauthentication/</link>
+      <pubDate>Fri, 28 Sep 2018 22:14:40 +0530</pubDate>
+      
+      <guid>https://dheerendramehar.github.io/posts/sshauthentication/</guid>
+      <description>How to resolve SSH Authentication issues 1. Problem: I wanted to access an Ubuntu node from a CentOS node without any password. To accomplish this, i needed to setup SSH keys. So I followed the following steps:
+a. Generated SSH keys using ssh-keyzen
+ubuntu@ubuntu_node:~$ ssh-keygen  here two keys are generated /your_home/.ssh/id_rsa and /your_home/.ssh/id_rsa.pub . First one is private key and second is public key.
+b. Copy the public key to authorized_keys on remote node(in my case a CentOS node) using ssh-copy-id</description>
+    </item>
+    
+  </channel>
+</rss>

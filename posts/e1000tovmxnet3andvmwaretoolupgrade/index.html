@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://dheerendramehar.github.io/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3"/>
+  <meta name="twitter:description" content="VMware tools installation:  You can install VMWare tools manually or automatically. Sometimes you don&rsquo;t have any choice except to install manually.
+ Automatic Installation:
+ Right click on the VM -&gt; Guest -&gt; Install/Upgrade VMWare tools Choose Automatic Tools Upgrade and click on OK. Installation will take some time, you can see it&rsquo;s status in Tasks shown at the bottom of the window.  Manual Installation:
+ Right click on the VM -&gt; Guest -&gt; Install/Upgrade VMWare tools Choose Interactive Tools Upgrade and click on OK."/>
+  
+    <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Dheerendra Mehar"/>
+  
+
+
+
+		
+		<meta name="author" content="Dheerendra Mehar">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.46" />
+		<title>Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3 &middot; Dheerendra Mehar</title>
+		<link rel="shortcut icon" href="https://dheerendramehar.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/style.css">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://dheerendramehar.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Dheerendra Mehar" />
+		
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/custom.css">
+		
+		
+		<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://dheerendramehar.github.io/"
+    },
+    "articleSection" : "posts",
+    "name" : "Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3",
+    "headline" : "Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3",
+    "description" : "VMware tools installation:  You can install VMWare tools manually or automatically. Sometimes you don&rsquo;t have any choice except to install manually.
+ Automatic Installation:
+ Right click on the VM -&gt; Guest -&gt; Install/Upgrade VMWare tools Choose Automatic Tools Upgrade and click on OK. Installation will take some time, you can see it&rsquo;s status in Tasks shown at the bottom of the window.  Manual Installation:
+ Right click on the VM -&gt; Guest -&gt; Install/Upgrade VMWare tools Choose Interactive Tools Upgrade and click on OK.",
+    "inLanguage" : "en-US",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-10-31 00:52:17 &#43;0530 &#43;0530",
+    "dateModified" : "2018-10-31 00:52:17 &#43;0530 &#43;0530",
+    "url" : "https://dheerendramehar.github.io/posts/e1000tovmxnet3andvmwaretoolupgrade/",
+    "wordCount" : "431",
+    "keywords" : [ "","Blog" ]
+}
+</script>
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://dheerendramehar.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://dheerendramehar.github.io/posts'>Archive</a>
+	<a href='https://dheerendramehar.github.io/tags'>Tags</a>
+	
+	<a href='https://dheerendramehar.github.io/about'>About</a>
+
+	
+
+	
+	 
+	 
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        Upgrading VMWare Tools and Network adapter from E1000 to VMXNET3
+                    </h1>
+                    <h2 class="headline">
+                    Oct 31, 2018 00:52
+                    · 431 words
+                    · 3 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://dheerendramehar.github.io/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                    <div id="toc">
+                      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#vmware-tools-installation">VMware tools installation:</a>
+<ul>
+<li><a href="#known-issues">Known Issues:</a></li>
+</ul></li>
+<li><a href="#steps-for-upgrading-e1000-to-vmxnet3">Steps for upgrading E1000 to VMXNET3:</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+                    </div>
+                  
+                
+                <section id="post-body">
+                    
+
+<h3 id="vmware-tools-installation">VMware tools installation:</h3>
+
+<ol>
+<li><p>You can install VMWare tools manually or automatically. Sometimes you don&rsquo;t have any choice except to install manually.</p></li>
+
+<li><p>Automatic Installation:</p>
+
+<ul>
+<li>Right click on the VM -&gt; Guest -&gt; Install/Upgrade VMWare tools</li>
+<li>Choose Automatic Tools Upgrade and click on OK.</li>
+<li>Installation will take some time, you can see it&rsquo;s status in Tasks shown at the bottom of the window.</li>
+</ul></li>
+
+<li><p>Manual Installation:</p>
+
+<ul>
+<li>Right click on the VM -&gt; Guest -&gt; Install/Upgrade VMWare tools</li>
+<li>Choose Interactive Tools Upgrade and click on OK.</li>
+<li>Now log into VM and run the following commands.
+
+<ul>
+<li>mount /dev/cdrom /mnt/cdrom  ; ls /mnt/cdrom</li>
+<li>cp /mnt/cdrom/VMwareTools-****.tar.gz /tmp/</li>
+<li>cd /tmp ; tar -zxvf VMwareTools-****.tar.gz</li>
+<li>cd vmware-tools-distrib</li>
+<li>./vmware-install.pl</li>
+<li>Complete the screen prompts to install the VMware Tools. Options in square brackets are default choices and can be selected by pressing Enter.</li>
+<li>umount /mnt/cdrom</li>
+</ul></li>
+<li>Sometimes OS is unable to unmount the /dev/cdrom. In this case, you may need to manually end the VMware Tools installation.</li>
+<li>To end the VMware Tools install, click VM in the virtual machine menu, then click Guest &gt; End VMware Tools Install.</li>
+</ul></li>
+</ol>
+
+<h4 id="known-issues">Known Issues:</h4>
+
+<ol>
+<li><p>eth2 and eth3 adapters are added in 70-persistent-net.rules file.
+Ans. This problem occurs when either &ldquo;MAC is bounded to ifcfg-eth0 and ifcfg-eth1 files&rdquo; or &ldquo;there exists an old 70-persistent-net.rules file&rdquo;.
+ To resolve this issue, either &ldquo;comment the line which has HWADDRADDR in ifcfg-eth0 and ifcfg-eth1 files&rdquo; or
+ &ldquo;Take a backup and remove the old 70-persistent-net.rules file and reboot the VM&rdquo; depending on your case.</p></li>
+
+<li><p>VMs are not pingable or reachable.
+Ans. First reboot the VM. If this does not solve the problem then try the resetting the VM.
+If still, you have issues check /etc/udev/rules.d/70-persistent-net.rules, ifcfg-eth0 and ifcfg-eth1 files</p></li>
+
+<li><p>VMWare tools status is showing as &ldquo;Not running&rdquo; while VMware tools version is shown as &ldquo;current&rdquo;.
+Ans. Type &ldquo;vmware&rdquo; on command prompt and press tab. You will be see multiple options.
+ Run the option &ldquo;vmware-config-tools.pl&rdquo;. It will try to reconfigure the VMWare tools. Press Enter to choose default options. After installation try reboot and resetting the VM.</p></li>
+</ol>
+
+<h3 id="steps-for-upgrading-e1000-to-vmxnet3">Steps for upgrading E1000 to VMXNET3:</h3>
+
+<ol>
+<li><p>First update the VMWare tools to latest version either manually or automatically.</p></li>
+
+<li><p>Log in to OS here CentOS 6.6</p></li>
+
+<li><p>Now go to VM Settings -&gt; edit settings</p></li>
+
+<li><p>From here, remove both E1000 adapters and add two VMXNET3 adapters for Northbound and Southbound.</p></li>
+
+<li><p>After doing this, VM will automatically reconfigure itself and /etc/udev/rules.d/70-persistent-net.rules
+will be modified with two new adapters.</p></li>
+
+<li><p>Take a backup and remove this modified /etc/udev/rules.d/70-persistent-net.rules file</p></li>
+
+<li><p>reboot the OS.</p></li>
+
+<li><p>Voila! you did it. Now everything should work fine.</p></li>
+
+<li><p>If VM is not pingable after this, try resetting the VM.</p></li>
+</ol>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fe1000tovmxnet3andvmwaretoolupgrade%2f - Upgrading%20VMWare%20Tools%20and%20Network%20adapter%20from%20E1000%20to%20VMXNET3 by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dheerendramehar-github'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/dheerem">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/dheerendramehar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.instagram.com/dheerendramehar">
+        <i class="fa fa-instagram"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2019 <i class="fa fa-heart" aria-hidden="true"></i> Dheerendra Mehar
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://dheerendramehar.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://dheerendramehar.github.io/js/main.js"></script>
+<script src="https://dheerendramehar.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'your_google_analytics_id', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>

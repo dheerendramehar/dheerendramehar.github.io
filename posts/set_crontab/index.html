@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+			
+  
+    <meta name="twitter:card" content="summary"/>
+    
+      <meta name="twitter:image" content="https://dheerendramehar.github.io/images/avatar.png" />
+    
+  
+  
+  <meta name="twitter:title" content="How to create a cronjob using Ansible"/>
+  <meta name="twitter:description" content="How to create a cronjob using Ansible:
+--- - name: Playbook to add new entries in crontab hosts: all remote_user: user_name tasks: - name: check whether user_name has permission to create crontab shell: &#39;grep &quot;user_name&quot; /etc/cron.allow&#39; register: user_status failed_when: &quot;user_status.rc == 2&quot; changed_when: false become: yes - name: Add user to /etc/cron.allow if it doesn&#39;t exist shell: &#39;echo &quot;user_name&quot; | sudo tee -a /etc/cron.allow&#39; when: user_status.rc == 1 - name: add new crontab entry if the user is newly added shell: &#39;echo &quot;43 15 * * * /bin/bash /home/user_name/script_name."/>
+  
+    <meta name="twitter:site" content="@https://www.twitter.com/dhirendramehar"/>
+  
+  
+  
+  
+    <meta name="twitter:creator" content="@Dheerendra Mehar"/>
+  
+
+
+
+		
+		<meta name="author" content="Dheerendra Mehar">
+		<meta name="description" content="Site Description">
+		<meta name="generator" content="Hugo 0.46" />
+		<title>How to create a cronjob using Ansible &middot; Dheerendra Mehar</title>
+		<link rel="shortcut icon" href="https://dheerendramehar.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/style.css">
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/highlight.css">
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://dheerendramehar.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Dheerendra Mehar" />
+		
+
+		
+		<link rel="stylesheet" href="https://dheerendramehar.github.io/css/custom.css">
+		
+		
+		<script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https://dheerendramehar.github.io/"
+    },
+    "articleSection" : "posts",
+    "name" : "How to create a cronjob using Ansible",
+    "headline" : "How to create a cronjob using Ansible",
+    "description" : "How to create a cronjob using Ansible:
+--- - name: Playbook to add new entries in crontab hosts: all remote_user: user_name tasks: - name: check whether user_name has permission to create crontab shell: 'grep &quot;user_name&quot; /etc/cron.allow' register: user_status failed_when: &quot;user_status.rc == 2&quot; changed_when: false become: yes - name: Add user to /etc/cron.allow if it doesn't exist shell: 'echo &quot;user_name&quot; | sudo tee -a /etc/cron.allow' when: user_status.rc == 1 - name: add new crontab entry if the user is newly added shell: 'echo &quot;43 15 * * * /bin/bash /home/user_name/script_name.",
+    "inLanguage" : "en-US",
+    "author" : "",
+    "creator" : "",
+    "publisher": "",
+    "accountablePerson" : "",
+    "copyrightHolder" : "",
+    "copyrightYear" : "2018",
+    "datePublished": "2018-12-17 16:04:36 &#43;0530 &#43;0530",
+    "dateModified" : "2018-12-17 16:04:36 &#43;0530 &#43;0530",
+    "url" : "https://dheerendramehar.github.io/posts/set_crontab/",
+    "wordCount" : "169",
+    "keywords" : [ "","Blog" ]
+}
+</script>
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://dheerendramehar.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://dheerendramehar.github.io/posts'>Archive</a>
+	<a href='https://dheerendramehar.github.io/tags'>Tags</a>
+	
+	<a href='https://dheerendramehar.github.io/about'>About</a>
+
+	
+
+	
+	 
+	 
+</nav>
+
+
+        <section id="wrapper" class="post">
+            <article>
+                <header>
+                    <h1>
+                        How to create a cronjob using Ansible
+                    </h1>
+                    <h2 class="headline">
+                    Dec 17, 2018 16:04
+                    · 169 words
+                    · 1 minute read
+                      <span class="tags">
+                      
+                      
+                          
+                              <a href="https://dheerendramehar.github.io/tags/"></a>
+                          
+                      
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                  
+                
+                <section id="post-body">
+                    <p>How to create a cronjob using Ansible:</p>
+
+<pre><code class="language-yaml">---
+
+- name: Playbook to add new entries in crontab
+  hosts: all
+  remote_user: user_name
+  tasks:
+     - name: check whether user_name has permission to create crontab
+       shell: 'grep &quot;user_name&quot; /etc/cron.allow'
+       register: user_status
+       failed_when: &quot;user_status.rc == 2&quot;
+       changed_when: false
+       become: yes
+
+     - name: Add user to /etc/cron.allow if it doesn't exist
+       shell: 'echo &quot;user_name&quot; | sudo tee -a /etc/cron.allow'
+       when:  user_status.rc == 1
+
+     - name: add new crontab entry if the user is newly added
+       shell: 'echo &quot;43 15 * * * /bin/bash /home/user_name/script_name.sh &gt; /dev/null 2&gt;&amp;1&quot; | crontab -'
+       when:  user_status.rc == 1
+       register: new_entry
+
+     - name: add new crontab entry along with old entries
+       shell: '(crontab -l ; echo &quot;43 15 * * * /bin/bash home/user_name/script_name.sh &gt; /dev/null 2&gt;&amp;1&quot;) | crontab -'
+       when: new_entry is skipped
+
+     - name: Check whether crontab entry is added or not
+       command: crontab -l
+       changed_when: false
+
+     - name : restart the crond service
+       service:
+          name: crond
+          state: restarted
+       become: yes
+</code></pre>
+
+<p>Tested on CentOS6.10 with ansible version 2.6.7.</p>
+
+                </section>
+            </article>
+
+            
+                <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fdheerendramehar.github.io%2fposts%2fset_crontab%2f - How%20to%20create%20a%20cronjob%20using%20Ansible by @https%3a%2f%2fwww.twitter.com%2fdhirendramehar"><span class="icon-twitter"> tweet</span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect"> Share</span>
+</a>
+
+            
+
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dheerendramehar-github'; 
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://www.facebook.com/dheerem">
+        <i class="fa fa-facebook-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://github.com/dheerendramehar">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://www.instagram.com/dheerendramehar">
+        <i class="fa fa-instagram"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2019 <i class="fa fa-heart" aria-hidden="true"></i> Dheerendra Mehar
+    
+    </p>
+    <p class="small">
+        Powered by <a href="http://www.gohugo.io/">Hugo</a> Theme By <a href="https://github.com/nodejh/hugo-theme-cactus-plus">nodejh</a>
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://dheerendramehar.github.io/js/jquery-3.3.1.min.js"></script>
+<script src="https://dheerendramehar.github.io/js/main.js"></script>
+<script src="https://dheerendramehar.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'your_google_analytics_id', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+
+
+    </body>
+</html>
