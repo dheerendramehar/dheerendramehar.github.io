@@ -10,8 +10,7 @@ hidden = true
 ## CONTACT ME
 
 | Email | dheerenm95@gmail.com |
-|----  | -------|
-| Mobile| +91- 8948317115| 
+
 
 ## WORK EXPERIENCE
 2 years 6 months (May 2016 – Present) | DevOps Engineer | Reliance Jio Infocomm Limited
