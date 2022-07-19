@@ -10,8 +10,6 @@ hidden = true
 ## CONTACT ME
 
 | Email | dheerenm95@gmail.com |
-|----  | -------|
-| Mobile| +91- 8948317115| 
 
 
 ## EDUCATION
